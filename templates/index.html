@@ -1,0 +1,55 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dengue Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Dengue Prediction</h1>
+    <form method="POST" action="/predict">
+        <label for="cough">Cough:</label>
+        <select name="cough" id="cough">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br><br>
+
+        <label for="fever">Fever:</label>
+        <select name="fever" id="fever">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br><br>
+
+        <label for="body_aches">Body Aches:</label>
+        <select name="body_aches" id="body_aches">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br><br>
+
+        <label for="headache">Headache:</label>
+        <select name="headache" id="headache">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br><br>
+
+        <label for="nausea">Nausea:</label>
+        <select name="nausea" id="nausea">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br><br>
+
+        <label for="vomiting">Vomiting:</label>
+        <select name="vomiting" id="vomiting">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+    
+    {% if prediction %}
+    <h2>{{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
